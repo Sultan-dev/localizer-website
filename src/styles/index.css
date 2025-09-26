@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import "../theme/index.css";
+
+:root {
+  --font-hsn-sara: "HSN Sara", system-ui, sans-serif;
+  --font-ge-ss-two: "GE SS Two", Arial, sans-serif;
+
+  line-height: 1.5;
+  font-weight: 400;
+  /* font-family: var(--font-hsn-sara); */
+
+  --font-hsn-sara: "HSN Sara", system-ui, sans-serif;
+  --font-ge-ss-two: "GE SS Two", Arial, sans-serif;
+
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: "";
+  background: linear-gradient(#ecfdf5 0%, #f0fdfa 50%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .shadow-custom {
+    --tw-shadow: 0 0px 20px 1px rgba(0, 0, 0, 0.05);
+    --tw-shadow-colored: 0 0px 20px 1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+  /* Responsive Font Sizes */
+  .text-h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .text-h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+
+  .text-h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+
+  .text-small {
+    @apply text-sm md:text-base;
+  }
+}
+
+.font-hsn-sara {
+  font-family: var(--font-hsn-sara);
+}
+
+.font-ge-ss-two {
+  font-family: var(--font-ge-ss-two);
+}
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+
+  --color-primary-*: initial;
+  --color-primary-main: #f5c12d;
+  --color-primary-dark: #ddae28;
+  --color-primary-light: #f5c12d70;
+  --color-primary-lighter: #f5c12d17;
+  --color-bg-color: #f1f1f1;
+  --color-warning-main: #f5c12d70;
+  --color-warning-dark: "#F5C12D";
+  --color-error-main: #c3212170;
+  --color-error-dark: #c32121;
+  --color-info-main: #1c5e9770;
+  --color-info-dark: #1c5e97;
+  --font-hsn-sara: var(--font-hsn-sara);
+  --font-ge-ss-two: var(--font-ge-ss-two);
+}
+.prose-editor p {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@layer utilities {
+  /* Font family utilities */
+  .font-hsn-sara {
+    font-family: var(--font-hsn-sara);
+  }
+
+  .font-ge-ss-two {
+    font-family: var(--font-ge-ss-two);
+  }
+
+  /* Font weight utilities */
+  .font-hsn-normal {
+    font-family: var(--font-hsn-sara);
+    font-weight: 400;
+  }
+
+  .font-hsn-bold {
+    font-family: var(--font-hsn-sara);
+    font-weight: 700;
+  }
+
+  .shadow-custom {
+    box-shadow: 0 0px 20px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .text-h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  .custom-clip-shape {
+    clip-path: path(
+      "M 10,40 L 70,40 A 10,10,0,0,0 80,30 L 80,10 A 10,10 0,0,1 90,0 L 140,0 A 10,10 0,150,10 L 150,190 L 140,200 L 10, 200 L 0,190 L 0,50 L 10,40 Z"
+    );
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-10px) translateY(5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.wave-motion {
+  animation: waveAnimation 3s ease-in-out infinite;
+}
+
+.wave-motion-slow {
+  animation: waveAnimation 4s ease-in-out infinite;
+  animation-delay: 0.5s; /* Staggered effect */
+}
+
+
+@media (min-width:700px) and (max-width:1000px) {
+  .custom-scale {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}

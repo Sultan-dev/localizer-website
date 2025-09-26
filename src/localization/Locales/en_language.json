@@ -1,0 +1,93 @@
+{
+  "nav_bar": {
+    "who_us": "About Us",
+    "services": "Our Services",
+    "values": "Our Values",
+    "target_sectors": "Key Sectors"
+  },
+  "hero": {
+    "content": "Your partner in local content",
+    "contact": "Contact us"
+  },
+  "about": {
+    "title": "The Localizers",
+    "content": "The Localizers is a Saudi consulting firm specializing in local content development. We provide expert advisory services to government entities, private sector companies, and state-owned enterprises. Our approach is rooted in both local and international best practices, aiming to contribute to a sustainable and thriving economy in the Kingdom of Saudi Arabia."
+  },
+  "target_sections": {
+    "title": "Key Sectors",
+    "item1": "Energy and Utilities",
+    "item2": "Industry",
+    "item3": "Environment and Sustainability",
+    "item4": "Telecommunications and Information Technology",
+    "item5": "Transportation and Logistics",
+    "item6": "Healthcare",
+    "item7": "Sports",
+    "item8": "Tourism, Culture, and Entertainment",
+    "item9": "Education and Training",
+    "item10": "Real Estate and Urban Development",
+    "item11": "Security and Safety",
+    "item12": "Water",
+    "item13": "Human Resources and Recruitment",
+    "item14": "Financial and Banking",
+    "item15": "Media and Production",
+    "item16": "Agriculture and Food",
+    "item17": "Entrepreneurship and Innovation",
+    "item18": "Artificial Intelligence and Advanced Technologies",
+    "more": "More"
+  },
+  "values": {
+    "our_value": "Our Values",
+    "value_content": "Our values focus on delivering high-quality work, passion for excellence, innovation in our methods, effective communication blended with transparency, and providing support whenever needed.",
+    "our_messages": "Our Mission",
+    "messages_content": "To provide high-quality consulting services and transfer knowledge in all aspects related to local content, in partnership with our clients.",
+    "our_visions": "Our Vision",
+    "visions_content": "Leadership in developing local content and localization."
+  },
+  "information": {
+    "header1": "Consulting",
+    "header1_content": "At The Localizers, we offer innovative consulting services that place local content at the heart of development strategies and economic transformation. We design high-impact solutions based on a deep understanding of local content dynamics.We also contribute to enabling entities to achieve their goals by enhancing readiness and activating economic and social impact. We believe that local content is a key driver of sustainable development, and we are passionate about transforming it into real added value that reflects the nation’s ambitions.",
+    "header2": "Secondment and Operations",
+    "header2_content": "At The Localizers, we redefine secondment and operations as strategic solutions that enhance efficiency and accelerate delivery.We go beyond simply providing personnel — we carefully select talent and expertise that make a real impact in the workplace. Our operational models are flexible and tailored to meet each client’s unique needs, ensuring the highest standards of quality and professionalism. This approach creates seamless integration between teams and maximizes added value in every project.",
+    "header3": "Knowledge Transfer and Training",
+    "header3_content": "At The Localizers, we believe that knowledge is not merely content to be delivered — it is an investment to be built.We design training programs and interactive learning experiences focused on capacity building and sustainable localization of expertise. Our goal is to empower organizations through practical, grounded knowledge transfer that inspires change, enhances readiness, and embeds a culture of continuous development.",
+    "header3_content_1": "Local Content Program in Government Procurement and Operations",
+    "header3_content_2": "Local Content Program in State-Owned Companies’ Procurement and Operations",
+    "header4": "AI Solutions",
+    "header4_content": "At The Localizers, we are reshaping the future of local content through artificial intelligence via The Localizers AI Platform — a smart solution that merges advanced technology with deep consulting expertise.We develop cutting-edge digital solutions that enhance policy efficiency, automate mandatory lists, accurately measure local impact, and analyze data for more informed decision-making.Our platform is more than just a tool — it is a smart consulting partner that empowers organizations to turn challenges into developmental opportunities. It transforms local content into a leading tech-driven experience, powered by data and driven by sustainability."
+  },
+  "achievments": {
+    "title": "Our Achievements",
+    "content": "Local Content Contribution and Awareness Award",
+    "bar": "Local Content Award Ceremony"
+  },
+  "clients": {
+    "our_clients": "Our Key Clients"
+  },
+  "human": {
+    "name": "Eng. Hisham Alammash",
+    "job": "Local Content Consultant",
+    "contact": "You can contact the consultant via"
+  },
+  "contact_us": {
+    "title": "Contact Us",
+    "name": "Name",
+    "mission": "Organization Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message"
+  },
+  "footer": {
+    "header1": "Follow Us",
+    "header2": "Our Location",
+    "content2": "Al-Murooj District, Riyadh",
+    "content22": "Kingdom of Saudi Arabia",
+    "header3": "Our Services",
+    "header3_1": "Consulting",
+    "header3_2": "Secondment and Operation",
+    "header3_3": "Training and Knowledge Transfer",
+    "header3_4": "AI Solutions",
+    "header4": "Career Opportunities",
+    "header4_1": "Employment",
+    "copy": "Copyright © The Localizers"
+  }
+}

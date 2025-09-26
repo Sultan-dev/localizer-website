@@ -1,0 +1,35 @@
+import { t } from "i18next";
+import { FaLinkedinIn } from "react-icons/fa";
+
+export const PRODUCTS = [
+  {
+    name: <FaLinkedinIn className="text-white w-8" />,
+    link: "https://www.linkedin.com/company/thelocalizers",
+  },
+];
+export const RESOURCES = [
+  {
+    name: t("footer.content2"),
+    link: "https://www.bing.com/maps?&ty=30&q=%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&vdpid=7373636364467699713&mb=24.486702~46.260721~24.471323~46.286871&cardbg=%23F98745&dt=1755010800000&tt=%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%2C%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&tsts0=%2526ty%253D30%2526q%253D%2525D8%2525AD%2525D9%25258A%252520%2525D8%2525A7%2525D9%252584%2525D9%252585%2525D8%2525B1%2525D9%252588%2525D8%2525AC%252520%2525D8%2525A7%2525D9%252584%2525D8%2525B1%2525D9%25258A%2525D8%2525A7%2525D8%2525B6%2526vdpid%253D7373636364467699713%2526mb%253D24.486702~46.260721~24.471323~46.286871%2526cardbg%253D%252523F98745%2526dt%253D1755010800000&tstt0=%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%2C%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&cp=24.479017~46.266266&lvl=15.500403&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027",
+  },
+  {
+    name: t("footer.content22"),
+    link: "/https://www.bing.com/maps?&ty=30&q=%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&vdpid=7373636364467699713&mb=24.486702~46.260721~24.471323~46.286871&cardbg=%23F98745&dt=1755010800000&tt=%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%2C%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&tsts0=%2526ty%253D30%2526q%253D%2525D8%2525AD%2525D9%25258A%252520%2525D8%2525A7%2525D9%252584%2525D9%252585%2525D8%2525B1%2525D9%252588%2525D8%2525AC%252520%2525D8%2525A7%2525D9%252584%2525D8%2525B1%2525D9%25258A%2525D8%2525A7%2525D8%2525B6%2526vdpid%253D7373636364467699713%2526mb%253D24.486702~46.260721~24.471323~46.286871%2526cardbg%253D%252523F98745%2526dt%253D1755010800000&tstt0=%D8%A7%D9%84%D9%85%D8%B1%D9%88%D8%AC%2C%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%2C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&cp=24.479017~46.266266&lvl=15.500403&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027",
+  },
+];
+export const COMPANY = [
+  { name: t("footer.header3_4"), link: "#our-services" },
+  { name: t("footer.header3_3"), link: "#our-services" },
+  { name: t("footer.header3_2"), link: "#our-services" },
+  { name: t("footer.header3_1"), link: "#our-services" },
+];
+export const SUPPORT = [
+  {
+    name: (
+      <button className="bg-white w-36 p-1 m-1 rounded-lg text-[#018755] hover:bg-[#018755] hover:text-white hover:cursor-pointer">
+        {t("footer.header4_1")}
+      </button>
+    ),
+    link: "https://linktr.ee/JoinTheLocalizer",
+  },
+];

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "HSN Sara";
+  src: url("./fonts/HSN Sara.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GE SS Two";
+  src: url("./fonts/GE_SS_Two_Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
