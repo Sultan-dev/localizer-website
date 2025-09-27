@@ -1,9 +1,9 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
+    branches: ["main"]
+  push:
     branches: ["main"]
 
 permissions:
@@ -33,7 +33,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Authenticate to Google Cloud via OIDC
       - name: Authenticate to Google Cloud
         id: auth
         uses: google-github-actions/auth@v3
@@ -42,20 +41,21 @@ jobs:
           workload_identity_provider: ${{ secrets.WIP_PROVIDER }}
           service_account: ${{ secrets.SA }}
 
-      # Set up gcloud using the credentials file from the auth step
+      - name: Verify GCP auth
+        run: gcloud auth list
+
+      # Setup gcloud WITHOUT service_account_key; it will automatically use the OIDC credentials
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v3
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      # Build and push Docker image
       - name: Build and push Docker image
         run: |
           gcloud auth configure-docker ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev
           docker build -t ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest .
           docker push ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest
 
-      # Deploy to Cloud Run
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy ${{ secrets.CLOUD_RUN_SERVICE_NAME }} \
