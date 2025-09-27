@@ -2,49 +2,53 @@ name: Node.js CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
+permissions:
+  id-token: write
+  contents: read
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [23.x]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v5.0.0
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v5.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build
+      - name: Build project
+        run: npm run build
 
-    - name: Authenticate to Google Cloud
-      uses: google-github-actions/auth@v3
-      with:
-        create_credentials_file: true
-        workload_identity_provider: ${{ secrets.WIP_PROVIDER }}
-        service_account: ${{ secrets.SA }}
+      - name: Authenticate to Google Cloud
+        if: github.event_name != 'pull_request' || github.repository == github.repository_owner # skip auth for forks
+        uses: google-github-actions/auth@v3
+        with:
+          create_credentials_file: true
+          workload_identity_provider: ${{ secrets.WIP_PROVIDER }}
+          service_account: ${{ secrets.SA }}
 
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v3
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
 
-    - name: Build and push Docker image
-      run: |
+      - name: Build and push Docker image
+        run: |
           gcloud auth configure-docker ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev
-          docker build -t ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest
+          docker build -t ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest .
           docker push ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest
 
-    - name: Deploy to Cloud Run
-      run: |
+      - name: Deploy to Cloud Run
+        run: |
           gcloud run deploy ${{ secrets.CLOUD_RUN_SERVICE_NAME }} \
             --image ${{ secrets.CLOUD_RUN_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/localizer-website-repo/website-image:latest \
             --platform managed \
