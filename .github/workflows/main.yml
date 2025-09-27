@@ -3,10 +3,13 @@ name: Node.js CI
 on:
   pull_request:
     branches: ["main"]
+  push:
+    branches: ["main"]
 
 permissions:
-  id-token: write
-  contents: read
+  id-token: write # required for OIDC authentication
+  contents: read # required for checkout
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,12 +34,14 @@ jobs:
         run: npm run build
 
       - name: Authenticate to Google Cloud
-        if: github.event_name != 'pull_request' || github.repository == github.repository_owner # skip auth for forks
         uses: google-github-actions/auth@v3
         with:
           create_credentials_file: true
           workload_identity_provider: ${{ secrets.WIP_PROVIDER }}
           service_account: ${{ secrets.SA }}
+
+      - name: Verify GCP auth
+        run: gcloud auth list
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v3
