@@ -40,7 +40,6 @@ jobs:
           create_credentials_file: true
           workload_identity_provider: ${{ secrets.WIP_PROVIDER }}
           service_account: ${{ secrets.SA }}
-          credentials_json: ${{ secrets.GCP_SA_CONFIG }}
       - name: Verify GCP auth
         run: gcloud auth list
 
