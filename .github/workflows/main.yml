@@ -44,11 +44,8 @@ jobs:
       - name: Verify GCP auth
         run: gcloud auth list
 
-      # Setup gcloud WITHOUT service_account_key; it will automatically use the OIDC credentials
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v3
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      - name: Set GCP Project
+        run: gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Build and push Docker image
         run: |
