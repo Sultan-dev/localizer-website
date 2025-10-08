@@ -11,8 +11,6 @@ import {
   MenuItem,
 } from "@mui/material";
 import Logo from "../../assets/Common/Logo.png";
-import LocalizersText from "../../assets/Common/TheLocalizersAITypo.svg";
-import LocalizersLogo from "../../assets/Common/TheLocalizersAIIcon.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
 import { GrLanguage } from "react-icons/gr";
@@ -47,7 +45,7 @@ function ResponsiveAppBar() {
   ];
 
   return (
-    <div dir={i18n.language === "ar" ? "ltr" : "rtl"}>
+    <div dir={i18n.language === "ar" ? "rtl" : "ltr"}>
       <Container>
         <Toolbar disableGutters className="!flex !justify-center !items-center">
           <Typography
@@ -106,6 +104,7 @@ function ResponsiveAppBar() {
                       textAlign: "center",
                       fontFamily: i18n.language === "ar" ? "HSN Sara" : "",
                     }}
+                    className="!text-base"
                   >
                     {page.label}
                   </Typography>
@@ -174,20 +173,46 @@ function ResponsiveAppBar() {
                   display: "block",
                   fontFamily: i18n.language === "ar" ? "HSN Sara" : "",
                 }}
+                className="!text-base"
               >
                 {page.label}
               </Button>
             ))}
           </Box>
           <Box className="flex" sx={{ flexGrow: 0 }}>
-            <div
-              className={`flex ${"bg-[#006A43]"} lg:h-11 lg:w-30 p-1 h-9 w-27 rounded-lg`}
-            >
-              <img
-                className="lg:w-22 w-20 p-[2px] m-[2px]"
-                src={LocalizersText}
-              />
-              <img className="w-4 p-[2px]" src={LocalizersLogo} />
+            <div className={`flex rounded-lg`}>
+              <a href="#contact-us">
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "white",
+                    color: "#002115",
+                    borderRadius: "10px",
+                    padding: {
+                      xs: "8px 12px",
+                      md: "8px 12px",
+                    },
+                    fontFamily: i18n.language === "ar" ? "HSN Sara" : "",
+                    fontSize: {
+                      xs: "0.7rem",
+                      sm: "1rem",
+                      md: "1.125rem",
+                      lg: "1rem",
+                    },
+                    fontWeight: "bold",
+                    textTransform: "none",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+                    "&:hover": {
+                      backgroundColor: "#f9fafb",
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 12px 25px rgba(0,0,0,0.2)",
+                    },
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  {t("hero.contact")}
+                </Button>
+              </a>
             </div>
 
             <div className="cursor-pointer">

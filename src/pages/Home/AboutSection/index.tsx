@@ -18,10 +18,20 @@ const AboutSection = () => {
           <ImageSlider />
         </div>
         <div className="flex-1 space-y-4">
-          <h2 className={`text-4xl font-bold ${i18n.language === "ar" ? "font-hsn-sara" : ""} text-gray-800 mb-8`}>
+          <h2
+            className={`text-4xl font-bold ${
+              i18n.language === "ar" ? "font-hsn-sara" : ""
+            } text-gray-800 mb-8`}
+          >
             {t("about.title")}
           </h2>
-          <p className={`text-gray-700 leading-loose ${i18n.language === "ar" ? "font-hsn-sara" : ""}`}>{t("about.content")}</p>
+          <p
+            className={`text-gray-700 text-lg leading-loose ${
+              i18n.language === "ar" ? "font-hsn-sara" : ""
+            }`}
+          >
+            {t("about.content")}
+          </p>
         </div>
       </div>
     </div>

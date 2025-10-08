@@ -16,15 +16,15 @@ const AchievementsSection = () => {
           <div className="relative w-full lg:w-2/5 xl:w-1/3 flex items-center justify-center mb-8 lg:mb-0">
             <div className="flex items-center">
               <img
-                className="h-auto scale-150 max-h-[150px] sm:max-h-[200px] md:max-h-[250px] lg:max-h-[300px] z-10"
+                className="h-auto scale-140 max-h-[140px] sm:max-h-[200px] md:max-h-[250px] lg:max-h-[300px] z-10"
                 src={cup}
                 alt="Achievement cup"
               />
               <img
                 className={`h-auto scale-115 max-h-[140px] ${
                   i18n.language === "ar"
-                    ? "lg:-ml-40 sm:-ml-10"
-                    : "lg:-mr-30 sm:ml-20"
+                    ? "lg:-ml-40 sm:-ml-10 -ml-18"
+                    : "lg:-mr-30 sm:ml-20 -mr-14"
                 } sm:max-h-[150px] md:max-h-[200px] lg:max-h-[200px] z-10`}
                 src={content}
                 alt="Content background"
