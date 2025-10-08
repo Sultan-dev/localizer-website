@@ -8,7 +8,7 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({ title, Links }) => {
   const { i18n } = useTranslation();
   return (
-    <ul dir="rtl">
+    <ul dir={i18n.language === "ar" ? "rtl" : "ltr"}>
       <h1
         className={`mb-1 text-[#018755] w-48 font-semibold ${
           i18n.language === "ar" ? "font-hsn-sara" : ""
