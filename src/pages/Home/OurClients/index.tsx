@@ -8,6 +8,7 @@ import image4 from "../../../assets/Clients/image 44.png";
 import image5 from "../../../assets/Clients/image 55.png";
 import image6 from "../../../assets/Clients/image 66.png";
 import image7 from "../../../assets/Clients/image 77.png";
+import image8 from "../../../assets/Clients/image 88.png";
 
 const OurClients = () => {
   const { t, i18n } = useTranslation();
@@ -79,7 +80,7 @@ const OurClients = () => {
             className="absolute flex items-center h-full whitespace-nowrap"
             style={{ willChange: "transform" }}
           >
-            {[image1, image2, image3, image4, image5, image6, image7].map(
+            {[image1, image2, image3, image4, image5, image6, image7, image8].map(
               (img, index) => (
                 <div
                   key={`client-${index}`}
